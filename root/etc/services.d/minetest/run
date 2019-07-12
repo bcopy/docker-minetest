@@ -1,5 +1,6 @@
 #!/usr/bin/with-contenv bash
 
+CLI_ARGS_ARR=($CLI_ARGS)
 exec \
-	s6-setuidgid abc minetestserver "${CLI_ARGS}" \
+	s6-setuidgid abc minetestserver ${CLI_ARGS_ARR[@]} \
 	--config /config/.minetest/main-config/minetest.conf --port 30000
